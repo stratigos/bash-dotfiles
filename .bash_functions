@@ -89,16 +89,17 @@ function cdwrk() {
 ## Set up ZShell Tabs for a Workday
 function setupwork() {
   cdwrk
+  
   ztitrails
-  sleep 0.2
+  
   new_tab && xdotool type ztitpuma && xdotool key Return && cdwrk
-  sleep 0.2
+  
   new_tab && xdotool type ztitpsql && xdotool key Return && cdwrk
-  sleep 0.2
+  
   new_tab && xdotool type ztitelm && xdotool key Return && cdwrk
-  sleep 0.2
+  
   new_tab && xdotool type ztitwrk && xdotool key Return
-  sleep 0.2
+  
   xdotool key Control+Page_Down
 }
 
