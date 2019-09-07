@@ -81,17 +81,23 @@ function new_tab() {
   xdotool key Control+Shift+t
 }
 
+## set $PWD to current project
+function cdwrk() {
+  xdotool type "cd ~/craft/ruby/rails/thoughtbot/hub" && xdotool key Return
+}
+
 ## Set up ZShell Tabs for a Workday
 function setupwork() {
+  cdwrk
   ztitrails
   sleep 0.2
-  new_tab && xdotool type ztitpuma && xdotool key Return
+  new_tab && xdotool type ztitpuma && xdotool key Return && cdwrk
   sleep 0.2
-  new_tab && xdotool type ztitpsql && xdotool key Return
+  new_tab && xdotool type ztitpsql && xdotool key Return && cdwrk
   sleep 0.2
-  new_tab && xdotool type ztitelm && xdotool key Return
+  new_tab && xdotool type ztitelm && xdotool key Return && cdwrk
   sleep 0.2
-  new_tab && xdotool type ztitwrk && xdotool key Return
+  new_tab && xdotool type ztitwrk && xdotool key Return && cdwrk
   sleep 0.2
   xdotool key Control+Page_Down
 }
