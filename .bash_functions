@@ -97,7 +97,7 @@ function setupwork() {
   sleep 0.2
   new_tab && xdotool type ztitelm && xdotool key Return && cdwrk
   sleep 0.2
-  new_tab && xdotool type ztitwrk && xdotool key Return && cdwrk
+  new_tab && xdotool type ztitwrk && xdotool key Return
   sleep 0.2
   xdotool key Control+Page_Down
 }
