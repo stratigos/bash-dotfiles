@@ -19,6 +19,11 @@ function ztitphx() {
   echo -en "\e]0;🐓🔥💻\a"
 }
 
+## Ruby / Rails prompt
+function ztitrails() {
+  echo -en "\e]0;💎 🛤 💻 🛤 💎\a"
+}
+
 ## Puma (Rails) Server
 function ztitpuma() {
   echo -en "\e]0;😼 Puma 🐈\a"
@@ -70,31 +75,25 @@ function ztitwrk() {
 
 ## Open a new terminal tab
 function new_tab() {
-  # the complex way
-  WID=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"| awk '{print $5}')
-  xdotool windowfocus $WID
-  xdotool key ctrl+shift+t
-  wmctrl -i -a $WID
-
-  # the simple way :)
-  # xdotool key Control+Shift+t
+  # without xdotool:
+  # create and set title for new tab, and switch focus to it
+  # gnome-terminal --tab --active --title="newthang" && wmctrl -a "newthang"
+  xdotool key Control+Shift+t
 }
 
 ## Set up ZShell Tabs for a Workday
 function setupwork() {
-  ztitmirs
+  ztitrails
   sleep 0.2
-  new_tab
+  new_tab && xdotool type ztitpuma && xdotool key Return
   sleep 0.2
-  # NEED FUNCTION HERE TO SWITCH FOCUS TO NEW TAB, ELSE ALL TITLE CHANGES JUST
-  # UPDATE THE FIRST TAB TITLE
-  # ztitpuma
-  # sleep 0.2
-  new_tab
+  new_tab && xdotool type ztitpsql && xdotool key Return
   sleep 0.2
-  # ztitpsql
-  # sleep 0.2
-  new_tab
+  new_tab && xdotool type ztitelm && xdotool key Return
+  sleep 0.2
+  new_tab && xdotool type ztitwrk && xdotool key Return
+  sleep 0.2
+  xdotool key Control+Page_Down
 }
 
 ## Destroy zombie PhantomJS processes left around by Wallaby
