@@ -129,3 +129,14 @@ function suchFileWatch() {
   sudo sysctl -p
 }
 
+## MISC
+
+### lame encode mp3s in directory to ~200 kbs
+function lamev2 { for f in *.mp3; do lame -h -V 2 "$f" tmp && mv tmp "$f"; done }
+
+### clear swap space
+function clearSwap { sudo swapoff -a && sudo swapon -a; }
+
+### list all files (e.g., MP3s) modified in last year
+function sinceLastYear { find . -mtime -365; }
+
