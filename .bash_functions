@@ -14,6 +14,11 @@ function ztit() {
 
 # Context-specific titles for `/bin/zsh`
 
+## Elixir prompt
+function ztitex() {
+  echo -en "\e]0;⚗ 🔬 Elxir 🔬 ⚗\a"
+}
+
 ## Phoenix Server
 function ztitphx() {
   echo -en "\e]0;🐓🔥💻\a"
@@ -34,14 +39,22 @@ function ztitpsql() {
   echo -en "\e]0;🐘 - PSQL - 🐘\a"
 }
 
-# Tools
-
 ## Hub
 function ztithub() {
   echo -en "\e]0;🚂 🤖 Hub 🤖 🚂\a"
 }
 
-## ADS (Frontend / Client app)
+## Constable
+function ztitconst() {
+ echo -en "\e]0;🔬⚗ Constable ⚗🔬\a"
+}
+
+## Bamboo
+function ztitbam() {
+  echo -en "\e]0;🎋⚗ Bamboo ⚗🎋\a"
+}
+
+## Elm
 function ztitelm() {
   echo -en "\e]0;🌳 Elm App 🌳\a"
 }
@@ -49,6 +62,16 @@ function ztitelm() {
 ## React JavaScript FE
 function ztitreact() {
   echo -en "\e]0;⚛ React JS ⚛\a"
+}
+
+## Node Server
+function ztitnode() {
+  echo -en "\e]0;📥 Node Server 📤\a"
+}
+
+## Scala
+function ztitsc() {
+  echo -en "\e]0;⚖🅰 Scala ⚖🅰\a"
 }
 
 ## SBT
@@ -66,9 +89,24 @@ function ztites() {
   echo -en "\e]0;❔ elastic search ❔\a"
 }
 
+## RabbitMQ
+function ztitrab() {
+  echo -en "\e]0; 🐰 \a"
+}
+
+## Writing Tab
+function ztitwrt() {
+  echo -en "\e]0;🖊 📝 🖋\a"
+}
+
 ## 'Worker' Tab
 function ztitwrk() {
   echo -en "\e]0;👨‍💻 ~worker~ 👨‍💻\a"
+}
+
+## Clients
+function ztitgu() {
+  echo -en "\e]0; 🎠 Good 🍰 Use ✨ \a"
 }
 
 # Ops
