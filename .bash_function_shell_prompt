@@ -1,0 +1,30 @@
+# This file facilitates swapping between a shell prompt that looks cool, and
+# one that VS Code shared terminals wont puke over.
+
+function gitPromptInfo() {
+  current_branch=$(git current-branch 2> /dev/null)
+
+  if [[ -n $current_branch ]]; then
+    echo " %{$fg_bold[magenta]%}[$current_branch]%{$reset_color%}"
+  fi
+}
+
+function prettyTerm() {
+  setopt promptsubst
+
+  # Allow exported PS1 variable to override default prompt.
+  if ! env | grep -q '^PS1='; then
+    PS1='${SSH_CONNECTION+"%{$fg_bold[yellow]%}%n@%m:"}%{$fg_bold[black]%}%D{%m/%d}⌚%T💻 %{$fg_bold[cyan]%}%c%{$reset_color%}$(gitPromptInfo) %{$fg_bold[green]% 🐢 %{$reset_color%}%{$fg_bold[blue]%}>%{$reset_color%} '
+  fi
+}
+
+
+function boringTerm() {
+  setopt promptsubst
+
+  # Allow exported PS1 variable to override default prompt.
+  if ! env | grep -q '^PS1='; then
+    PS1='${SSH_CONNECTION+"%{$fg_bold[yellow]%}%n@%m:"}%{$fg_bold[black]%}%D{%m/%d} %T %{$fg_bold[cyan]%}%c%{$reset_color%}$(gitPromptInfo) %{$fg_bold[green]% %{$reset_color%}%{$fg_bold[blue]%}>%{$reset_color%} '
+  fi
+}
+
