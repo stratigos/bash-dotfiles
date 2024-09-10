@@ -152,19 +152,19 @@ function cdwrk2() {
 ## Set up ZShell Tabs for a Workday
 function setupwork() {
   cdwrk
-  
+
   ztitprpy && xdotool type clear && xdotool key Return
-  
+
   new_tab && xdotool type ztitprserv && xdotool key Return && cdwrk && xdotool type clear && xdotool key Return
-  
+
   new_tab && xdotool type ztitprtest && xdotool key Return && cdwrk && xdotool type clear && xdotool key Return
 
   new_tab && xdotool type ztitprfe && xdotool key Return && cdwrk2 && xdotool type clear && xdotool key Return
 
   new_tab && xdotool type ztitnode && xdotool key Return && cdwrk2 && xdotool type clear && xdotool key Return
-  
+
   new_tab && xdotool type ztitwrk && xdotool key Return && xdotool type prettyTerm && xdotool key Return && xdotool type clear && xdotool key Return
-  
+
   xdotool key Control+Page_Down
 }
 
@@ -200,7 +200,7 @@ function suchFileWatch() {
 function lamev2 { for f in *.mp3; do lame -h -V 2 "$f" tmp && mv tmp "$f"; done }
 
 ### fix media keys (like when Chrome steals them!)
-function fixPause { killall gsd-media-keys }
+function fixPause { killall gsd-media-keys; }
 #########
 # Alternative:
 # dconf reset /org/gnome/settings-daemon/plugins/media-keys/next
@@ -217,9 +217,6 @@ function clearSwap { sudo swapoff -a && sudo swapon -a; }
 
 # Include more files with more functions
 
-source ~/.bash_function_shell_prompt
-
 if [ -f ~/.bash_function_shell_prompt ]; then
   . ~/.bash_function_shell_prompt
 fi
-

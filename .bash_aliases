@@ -11,4 +11,4 @@ alias gdifrd="git diff | egrep -i '(puts)|(abort)|(debug)|(byebug)|(alert)|(cons
 alias gdifed="git diff | egrep -i '(IO\.inspect)|(abort)|(debug)|(alert)|(console.log)|(TODO)'"
 
 # Vanta Agent
-alias vanta-cli="/var/vanta/vanta-cli"
+# alias vanta-cli="/var/vanta/vanta-cli"

@@ -126,7 +126,15 @@ if ! shopt -oq posix; then
 fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
+# . "$HOME/.cargo/env"
+
+# [[ -s "/home/tm/.gvm/scripts/gvm" ]] && source "/home/tm/.gvm/scripts/gvm"
+
+# ASDF
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
 . "$HOME/.cargo/env"
 
-[[ -s "/home/tm/.gvm/scripts/gvm" ]] && source "/home/tm/.gvm/scripts/gvm"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
