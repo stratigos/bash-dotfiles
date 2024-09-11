@@ -2,7 +2,7 @@
 # one that VS Code shared terminals wont puke over.
 
 function gitPromptInfo() {
-  current_branch=$(git current-branch 2> /dev/null)
+  current_branch=$(git cb 2> /dev/null)
 
   if [[ -n $current_branch ]]; then
     echo " %{$fg_bold[magenta]%}[$current_branch]%{$reset_color%}"
